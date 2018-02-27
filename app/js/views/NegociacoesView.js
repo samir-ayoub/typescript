@@ -1,33 +1,37 @@
-class NegociacoesView extends View {
-    template(model) {
-        return `
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th>DATA</th>
-                    <th>QUANTIDADE</th>
-                    <th>VALOR</th>
-                    <th>VOLUME</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-            </tbody>
-                ${model.paraArray().map(negociacao => {
+var Views;
+(function (Views) {
+    class NegociacoesView extends Views.View {
+        template(model) {
             return `
-                        <tr>
-                            <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
-                            <td>${negociacao.quantidade}</td>
-                            <td>${negociacao.valor}</td>
-                            <td>${negociacao.volume}</td>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>DATA</th>
+                        <th>QUANTIDADE</th>
+                        <th>VALOR</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                </tbody>
+                    ${model.paraArray().map(negociacao => {
+                return `
+                            <tr>
+                                <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
+                                <td>${negociacao.quantidade}</td>
+                                <td>${negociacao.valor}</td>
+                                <td>${negociacao.volume}</td>
+                            
+                            </tr>
                         
-                        </tr>
-                    
-                    `;
-        }).join('')}
-            <tfoot>
-            </tfoot>
-        </table>
-        `;
+                        `;
+            }).join('')}
+                <tfoot>
+                </tfoot>
+            </table>
+            `;
+        }
     }
-}
+    Views.NegociacoesView = NegociacoesView;
+})(Views || (Views = {}));
