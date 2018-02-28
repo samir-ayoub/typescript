@@ -1,3 +1,6 @@
+import { NegociacaoController } from './controllers/NegociacaoController';
+
+
 const controller = new NegociacaoController();
 
 document
