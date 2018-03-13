@@ -1,3 +1,4 @@
+import { logarTempoDeExecucao } from '../helpers/decorators/index';
 
 export abstract class View<T> {
 
@@ -8,6 +9,7 @@ export abstract class View<T> {
         this._elemento = document.querySelector(seletor);
     }
 
+    @logarTempoDeExecucao()
     update(model: T): void {
 
         this._elemento.innerHTML = this.template(model);

@@ -9,7 +9,6 @@ System.register(["./controllers/NegociacaoController"], function (exports_1, con
             }
         ],
         execute: function () {
-            alert('olar');
             controller = new NegociacaoController_1.NegociacaoController();
             document
                 .querySelector('.form')
